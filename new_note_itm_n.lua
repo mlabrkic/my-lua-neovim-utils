@@ -18,11 +18,11 @@
 
 ------------------------------------------------------------
 
-function NewNote_TR_MP()
+function NewNote_ITM_n()
   local A = vim.api
 
   local userHOME = vim.fn.getenv("userprofile")
-  local filename = userHOME .. "/Documents/PREDLOSCI/TR_note_template/TR_note_template_MP.txt" -- my daily job
+  local filename = userHOME .. "/Documents/PREDLOSCI/TR_note_template/tr_note_template_itm.txt" -- my daily job
   filename = vim.fs.normalize(filename)
 
   -- nvim_create_buf({listed}, {scratch})
@@ -32,7 +32,7 @@ function NewNote_TR_MP()
   -- nvim_set_option_value({name}, {value}, {opts})
   A.nvim_set_option_value("buftype", "", { buf = bufnr }) -- set buftype="" (because I want to save the file)
 
-  -- local date1 = vim.fn.strftime('%Y_%mM_%d-%Hh%M', vim.fn.localtime())
+  -- local date1 = vim.fn.strftime("%Y_%mM_%d-%Hh%M", vim.fn.localtime())
   local date1 = vim.fn.strftime("%Y_%mM_%d", vim.fn.localtime())
 
   vim.ui.input({ prompt = "Name: ", relative = "editor" }, function(name)
